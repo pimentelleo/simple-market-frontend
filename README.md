@@ -10,7 +10,7 @@ This is a simple market web app made in ReactJS, and using AdonisJS as backend f
 
 ## Backend
 
-`cd backend && npm i -g @adonisjs/cli && npm install && adonis serve --dev
+`cd backend && npm i -g @adonisjs/cli && npm install && adonis serve --dev`
 
 ## Setting Up
 
