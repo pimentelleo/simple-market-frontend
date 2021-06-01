@@ -1,6 +1,4 @@
-<img src="https://geysermc.org/img/geyser-1760-860.png" alt="Geyser" width="600"/>
-
-[![forthebadge made-with-java](https://ForTheBadge.com/images/badges/made-with-java.svg)](https://java.com/)
+[![forthebadge made-with-java](https://forthebadge.com/images/badges/uses-js.svg)](https://java.com/)
 
 This is a simple market web app made in ReactJS, and using AdonisJS as backend for serving API and Database access to the application.
 
