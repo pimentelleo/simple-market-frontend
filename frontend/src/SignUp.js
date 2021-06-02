@@ -53,14 +53,11 @@ function fetchDatabaseUsers() {
     .then((data) => console.log("This is your data", data));
 }
 
-function databaseUserInsert() {
-  const apiUrl = "http://localhost:3333";
-  const apiRoute = "/register/submit";
-}
-
 export default function SignUp() {
   const classes = useStyles();
   const [firstName, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleClick = () => {
     console.log(firstName);
@@ -68,6 +65,23 @@ export default function SignUp() {
 
   function displayUserData() {
     alert(firstName);
+  }
+
+  function databaseUserInsert() {
+    const apiUrl = "http://localhost:3333/register/submit";
+    const apiRoute = "/register/submit";
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: firstName,
+        email: email,
+        password: password,
+      }),
+    });
   }
 
   console.log(firstName);
@@ -141,13 +155,23 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
-            onClick={fetchDatabaseUsers}
+            onClick={displayUserData}
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Apenas um teste
+          </Button>
+          <Button
+            onClick={databaseUserInsert}
+            // type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Registrar-se
           </Button>
           <Grid container justify="flex-end">
             <Grid item>

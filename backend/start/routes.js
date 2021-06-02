@@ -15,7 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use("Route");
-const Database = use('Database')
+const Database = use("Database");
 
 Route.get("/", () => {
   return { greeting: "Hello world in JSON" };
@@ -30,5 +30,12 @@ Route.get("/users", async () => {
 });
 
 Route.post("/register/submit", async () => {
-  return await Database.table("users").select("*");
+  // var request = require("request");
+  // const data = request.only(["username", "email", "password"]);
+
+  return await Database.table("users").insert({
+    username: "leonardo",
+    email: "leonardociberxon@gmail.com",
+    password: "E@22segredo",
+  });
 });
