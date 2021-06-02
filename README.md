@@ -4,6 +4,10 @@
 
 This is a simple market web app made in ReactJS, and using AdonisJS as backend for serving API and Database access to the application.
 
+### Live development
+
+http://ricksanchez.ddns.net:666/
+
 ## Frontend
 
 `cd frontend && npm install && npm start`

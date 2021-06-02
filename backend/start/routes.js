@@ -35,7 +35,7 @@ Route.post("/register/submit", async () => {
 
   return await Database.table("users").insert({
     username: "leonardo",
-    email: "leonardociberxon@gmail.com",
-    password: "E@22segredo",
+    email: "forabolsonaro@fodase.com",
+    password: "esegredo",
   });
 });
