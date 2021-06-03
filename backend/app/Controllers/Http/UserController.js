@@ -41,8 +41,9 @@ class UserController {
    */
   async store({ request, response }) {
     // const { user, email, password } = request.body;
-    const body = request.body;
+    const body = request.only(["username", "email", "password"]);
     console.log(body);
+    await use("Database").table("users").insert(body);
   }
 
   /**
