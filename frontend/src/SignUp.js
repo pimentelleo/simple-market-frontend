@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
 
 function Copyright() {
   return (
@@ -69,9 +70,9 @@ export default function SignUp() {
 
   function databaseUserInsert() {
     const apiUrl = "http://localhost:3333/register/submit";
-    const apiRoute = "/register/submit";
     fetch(apiUrl, {
       method: "POST",
+      uri: "http://localhost:3333/register/submit",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -82,6 +83,21 @@ export default function SignUp() {
         password: password,
       }),
     });
+  }
+  function databaseUserInsert2() {
+    const apiUrl = "http://localhost:3333/register/submit";
+    axios
+      .post("http://localhost:3333/register/submit", {
+        username: firstName,
+        email: email,
+        password: password,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   console.log(firstName);
@@ -133,6 +149,9 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -145,6 +164,9 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
               />
             </Grid>
             <Grid item xs={12}>

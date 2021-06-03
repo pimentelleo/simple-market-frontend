@@ -29,13 +29,4 @@ Route.get("/users", async () => {
   return await Database.table("users").select("*");
 });
 
-Route.post("/register/submit", async () => {
-  // var request = require("request");
-  // const data = request.only(["username", "email", "password"]);
-
-  return await Database.table("users").insert({
-    username: "leonardo",
-    email: "forabolsonaro@fodase.com",
-    password: "esegredo",
-  });
-});
+Route.post("/register/submit", "UserController.store");
