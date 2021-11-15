@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: do-kubernetes-sample-app
+  namespace: kube-system
+  labels:
+    app: do-kubernetes-sample-app
+    node: sanchezkubenode
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080:80
+      targetPort: http
+      name: http
+  selector:
+    app: do-kubernetes-sample-app
