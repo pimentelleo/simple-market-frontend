@@ -4,7 +4,7 @@ This is a simple market web app made in ReactJS, and using AdonisJS as backend f
 
 ### Live development
 
-http://ricksanchez.ddns.net:666/
+http://ricksanchez.ddns.net:8080/
 
 ## Frontend
 
