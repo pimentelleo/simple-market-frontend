@@ -1,22 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: do-kubernetes-sample-app
+  name: simple-market-app-frontend
   namespace: kube-system
   labels:
-    app: do-kubernetes-sample-app
+    app: simple-market-app-frontend
     node: sanchezkubenode
 spec:
   type: ClusterIP
   ports:
-    - port: 80
-      targetPort: http
-      name: http
-    - port: 3000
-      targetPort: http
-      name: adonisjs
     - port: 3030
       targetPort: http
       name: reactfront
   selector:
-    app: do-kubernetes-sample-app
+    app: simple-market-app-frontend
