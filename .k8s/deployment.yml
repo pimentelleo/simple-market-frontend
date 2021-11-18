@@ -19,12 +19,12 @@ spec:
     spec:
       containers:
         - name: simplemarket-backend
-          image: leopimentel/simple-market-backend:latest
+          image: leopimentel/simple-market-backend:$COMMIT_SHA1
           ports:
             - containerPort: 3000
               name: adonisjs
         - name: simplemarket-frontend
-          image: leopimentel/simple-market-frontend:latest
+          image: leopimentel/simple-market-frontend:$COMMIT_SHA1
           ports:
             - containerPort: 3030
               name: reactfront
