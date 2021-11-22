@@ -7,10 +7,11 @@ metadata:
     app: simple-market-app-frontend
     node: sanchezkubenode
 spec:
-  type: ClusterIP
   ports:
-    - port: 3030
-      targetPort: http
-      name: reactfront
+  - name: "3030"
+    port: 3030
+    targetPort: 3000
   selector:
     app: simple-market-app-frontend
+    name: react
+  type: NodePort

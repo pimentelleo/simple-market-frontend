@@ -22,4 +22,4 @@ spec:
           image: leopimentel/simple-market-frontend:$COMMIT_SHA1
           ports:
             - containerPort: 3030
-              name: reactfront
+              name: react
