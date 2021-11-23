@@ -1,5 +1,5 @@
 #! /bin/bash
-# exitt script when any command ran here returns with non-zero exit code
+# exit script when any command ran here returns with non-zero exit code
 set -e
 
 COMMIT_SHA1=$CIRCLE_SHA1
