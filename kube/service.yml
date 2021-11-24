@@ -10,7 +10,7 @@ spec:
   ports:
   - name: "3030"
     port: 3030
-    targetPort: 3000
+    localPort: 3000
   selector:
     app: simple-market-app-frontend
     name: react
