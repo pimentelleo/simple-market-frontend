@@ -21,4 +21,4 @@ echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
   --namespace=kube-system \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
-  apply -f ./kube/
+  delete -f ./kube/
