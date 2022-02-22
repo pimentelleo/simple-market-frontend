@@ -8,6 +8,7 @@ import SignInSide from './SignInSide';
 import SignUp from './SignUp';
 import Products from './Products';
 import Navigation from './Navigation';
+import Estudos from './estudos/estudos';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -34,6 +35,7 @@ export default function App() {
 					<Route path='/' component={SignInSide} exact />
 					<Route path='/registrar' component={SignUp} />
 					<Route path='/produtos' component={Products} />
+					<Route path='/estudos' component={Estudos} />
 					<Route component={Error} />
 				</Switch>
 			</div>
