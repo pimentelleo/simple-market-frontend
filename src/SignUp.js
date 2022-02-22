@@ -69,10 +69,10 @@ export default function SignUp() {
   }
 
   function databaseUserInsert() {
-    const apiUrl = "http://simple-market-backend.herokuapp.com/register/submit";
+    const apiUrl = "https://simple-market-backend.herokuapp.com/register/submit";
     fetch(apiUrl, {
       method: "POST",
-      uri: "http://simple-market-backend.herokuapp.com/register/submit",
+      uri: "https://simple-market-backend.herokuapp.com/register/submit",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -85,9 +85,9 @@ export default function SignUp() {
     });
   }
   function databaseUserInsert2() {
-    const apiUrl = "http://simple-market-backend.herokuapp.com/register/submit";
+    const apiUrl = "https://simple-market-backend.herokuapp.com/register/submit";
     axios
-      .post(apiUrl, {
+      .post(apiUrl, { 
         username: firstName,
         email: email,
         password: password,
