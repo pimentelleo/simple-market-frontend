@@ -13,6 +13,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "./tio-patinhas.jpg";
+import axios from "axios";
+
 
 function Copyright() {
   return (
@@ -25,6 +27,27 @@ function Copyright() {
       {"."}
     </Typography>
   );
+}
+function userLogin() {
+  const apiUrl = "http://localhost:3030/login";
+  fetch(apiUrl, {method: "POST", body: {email: email, password: password}})
+    .then((response) => response.json())
+    .then((data) => console.log("This is your data"));
+}
+
+function userLogin2() {
+  const apiUrl = "http://localhost:3333/login";
+  axios
+    .post(apiUrl, { 
+      email: email,
+      password: password,
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log("Usuario nao existe");
+    });
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -103,7 +126,8 @@ export default function SignInSide() {
               label="Remember me"
             />
             <Button
-              type="submit"
+              onClick={userLogin2}
+              //type="submit"
               fullWidth
               variant="contained"
               color="primary"

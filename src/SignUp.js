@@ -69,15 +69,9 @@ export default function SignUp() {
   }
 
   function databaseUserInsert() {
-    const apiUrl = "https://simple-market-backend.herokuapp.com/register/submit";
+    const apiUrl = "http://simple-market-backend.herokuapp.com/register/submit";
     fetch(apiUrl, {
-      method: "POST",
-      uri: "https://simple-market-backend.herokuapp.com/register/submit",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+      method: "POST", body: JSON.stringify({
         username: firstName,
         email: email,
         password: password,
@@ -85,7 +79,7 @@ export default function SignUp() {
     });
   }
   function databaseUserInsert2() {
-    const apiUrl = "https://simple-market-backend.herokuapp.com/register/submit";
+    const apiUrl = "http://localhost:3333/register/test";
     axios
       .post(apiUrl, { 
         username: firstName,
@@ -96,7 +90,7 @@ export default function SignUp() {
         console.log(response);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log("Usuario ja existe");
       });
   }
 
@@ -177,7 +171,7 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
-            onClick={displayUserData}
+            onClick={databaseUserInsert2}
             fullWidth
             variant="contained"
             color="primary"
