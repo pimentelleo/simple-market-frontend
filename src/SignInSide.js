@@ -14,6 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import bgImage from "./tio-patinhas.jpg";
 import axios from "axios";
+const apiUrl = "http://localhost:3333/login";
 
 
 function Copyright() {
@@ -28,26 +29,36 @@ function Copyright() {
     </Typography>
   );
 }
-function userLogin() {
-  const apiUrl = "http://localhost:3030/login";
-  fetch(apiUrl, {method: "POST", body: {email: email, password: password}})
-    .then((response) => response.json())
-    .then((data) => console.log("This is your data"));
-}
 
 function userLogin2() {
-  const apiUrl = "http://localhost:3333/login";
-  axios
-    .post(apiUrl, { 
+  fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
       email: email,
       password: password,
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log("Usuario nao existe");
-    });
+    }),
+  })
+}
+
+function userLogin(){
+fetch(apiUrl, {
+  method: "POST",
+
+  body: {
+    email: email,
+    password: password,
+  },
+})
+
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((err) => {
+    console.log(err);
+   });
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -126,7 +137,7 @@ export default function SignInSide() {
               label="Remember me"
             />
             <Button
-              onClick={userLogin2}
+              onClick={userLogin}
               //type="submit"
               fullWidth
               variant="contained"

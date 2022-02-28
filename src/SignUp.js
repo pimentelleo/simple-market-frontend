@@ -79,7 +79,7 @@ export default function SignUp() {
     });
   }
   function databaseUserInsert2() {
-    const apiUrl = "http://localhost:3333/register/test";
+    const apiUrl = "http://localhost:3333/register/submit";
     axios
       .post(apiUrl, { 
         username: firstName,
